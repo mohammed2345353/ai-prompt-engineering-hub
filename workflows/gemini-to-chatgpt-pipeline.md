@@ -1,9 +1,23 @@
-# 🔄 Multi-Model Pipeline: Gemini + ChatGPT
+# Multi-model pipeline: Gemini builds, ChatGPT delivers
 
-## Overview
-Combine the strengths of **Google Gemini** (massive context window & multimodal ingestion) with **ChatGPT** (structured code refinement & Canvas editing).
+The working split keeps substantial programming with Gemini and uses ChatGPT
+for execution, checks, file handling, and GitHub delivery. Google Drive is the
+shared source and artifact location.
 
-## Step-by-Step Workflow
-1. **Ingest & Extract (Gemini):** Upload raw PDFs, logs, or transcripts to Gemini using `gemini-prompts/long-context-analyzer.md` to extract clean structured tables and facts.
-2. **Architect & Refine (ChatGPT):** Feed the extracted structured summary into ChatGPT using `chatgpt-prompts/chain-of-thought-architect.md` inside **Canvas** to generate clean code or documentation.
-3. **Version Control (GitHub):** Commit both the prompt templates and final outputs into your repository.
+## Steps
+
+1. Prepare the project brief and source index in Google Drive.
+2. Gemini reads the sources, designs and implements the solution, writes tests,
+   and delivers complete, versioned files plus a manifest.
+3. ChatGPT retrieves that exact artifact, runs focused checks, and sends any
+   reproducible programming failures back to Gemini.
+4. ChatGPT organizes accepted files and handles GitHub branches and delivery.
+5. Record the artifact version, checks, commit, links and next owner in Drive.
+
+ChatGPT does not generate a competing full implementation by default.
+Never mark a Gemini delivery, Drive save, test, or GitHub upload complete
+without the actual artifact or result. This workflow is coordinated through
+files; it does not itself connect or automate the accounts.
+
+See [the detailed handoff agreement](gemini-build-chatgpt-delivery.md) and
+[the Arduino example](../examples/arduino-energy/README.md).
