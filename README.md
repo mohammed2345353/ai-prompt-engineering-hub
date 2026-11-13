@@ -13,7 +13,9 @@ ai-prompt-engineering-hub/
 ├── gemini-prompts/
 │   └── long-context-analyzer.md
 ├── chatgpt-prompts/
-│   └── chain-of-thought-architect.md
+│   ├── chain-of-thought-architect.md
+│   ├── python-code-review.md
+│   └── arduino-delivery-review.md
 ├── workflows/
 │   └── gemini-to-chatgpt-pipeline.md
 └── scripts/
@@ -26,6 +28,7 @@ ai-prompt-engineering-hub/
 | --- | --- |
 | [Long-context analyzer](gemini-prompts/long-context-analyzer.md) | Extract five core concepts from attached documents, with page or section references. |
 | [Technical architect](chatgpt-prompts/chain-of-thought-architect.md) | Organize technical requirements, constraints, trade-offs, and implementation output. |
+| [Python code review](chatgpt-prompts/python-code-review.md) | Review the validator and explain evidence-backed findings in Iraqi Arabic for a beginner. |
 | [Gemini → ChatGPT pipeline](workflows/gemini-to-chatgpt-pipeline.md) | Follow a manual document-extraction, refinement, and version-control workflow. |
 | [Prompt validator](scripts/prompt_validator.py) | Check Markdown files for paired `<role>` and `<task>` tags. |
 
@@ -52,6 +55,7 @@ Run from the repository root:
 ```bash
 python scripts/prompt_validator.py gemini-prompts/long-context-analyzer.md
 python scripts/prompt_validator.py chatgpt-prompts/chain-of-thought-architect.md
+python scripts/prompt_validator.py chatgpt-prompts/python-code-review.md
 ```
 
 On Windows, `py` can be used instead of `python` when the Python launcher is installed.
@@ -69,6 +73,17 @@ The validator uses regular expressions to check for `<role>...</role>` and `<tas
 - XML-style tags organize instructions; they do not enforce model behavior or reveal a model's private reasoning. Ask for concise explanations, assumptions, trade-offs, and verifiable results.
 - The templates have no model-specific API dependencies. Available features and behavior depend on the AI application and model you use.
 - Keep credentials and confidential source documents out of public commits. `.gitignore` excludes common local secrets and temporary files, but does not inspect file contents.
+
+## Applied workflow: Arduino energy monitor
+
+See [the Arduino example](examples/arduino-energy/README.md): Gemini owns
+substantial programming and programming fixes; ChatGPT retrieves the files,
+runs focused checks and handles GitHub delivery. Google Drive holds the
+shared sources, versioned artifacts and handoff status.
+
+The example includes [Gemini's programming assignment](gemini-prompts/arduino-heavy-build.md)
+and [ChatGPT's delivery assignment](chatgpt-prompts/arduino-delivery-review.md).
+It does not yet include finished Arduino firmware or a Gemini-generated build.
 
 ## Contributing
 
