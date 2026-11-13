@@ -2,7 +2,7 @@
 
 A structured collection of advanced system prompts, long-context XML templates, reasoning workflows, and validation scripts for Google Gemini and ChatGPT.
 
-Use Gemini to extract information from source documents, then bring the structured results into ChatGPT for technical planning and implementation. The templates are starting points to adapt and review for your own tasks.
+Use Gemini for source analysis, solution design, substantial programming, tests, and programming fixes. Use ChatGPT for artifact retrieval, focused checks, repository organization, and GitHub delivery. Google Drive holds shared sources, versioned outputs, and handoff status. The templates are starting points to adapt and review for your own tasks.
 
 ## Repository structure
 
